@@ -4,15 +4,15 @@ const TicketFull = require('./TicketFull');
 
 class DataBase {
   constructor() {
-    this.DBUrl = './src/js/data.json';
+    this.DBUrl = './src/DB/data.json';
   }
 
   getAllTickets() {
-    return this.parse().ticket;
+    return this.parse().tickets;
   }
 
   getTicketById(id) {
-    return this.parse.ticketsFull.find((ticket) => ticket.id === Number(id));
+    return this.parse().ticketsFull.find((ticket) => ticket.id === Number(id));
   }
 
   postTicket(ticketData) {

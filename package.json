@@ -1,0 +1,32 @@
+{
+  "name": "ahj-homeworks-http-beckend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon ./src/js/app.js",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Votchitsev/ahj-homeworks-http-beckEnd.git"
+  },
+  "author": "Votchitsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Votchitsev/ahj-homeworks-http-beckEnd/issues"
+  },
+  "homepage": "https://github.com/Votchitsev/ahj-homeworks-http-beckEnd#readme",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "type":"commonjs"
+}
