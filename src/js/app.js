@@ -16,7 +16,7 @@ app.use((ctx, next) => {
 
   ctx.response.set('Access-Control-Allow-Origin', '*');
   ctx.response.set('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Content-Type');
-  ctx.response.set('Access-Control-Allow-Methods', 'GET, POST, DELETE');
+  ctx.response.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
   ctx.response.status = 204;
 });
 
@@ -38,6 +38,10 @@ app.use(async (ctx) => {
       return;
     case 'deleteTicket':
       dataBase.deleteTicket(ctx.request.query.id);
+      ctx.response.body = 'OK';
+      return;
+    case 'changeTicket':
+      dataBase.changeTicket(ctx.request.body);
       ctx.response.body = 'OK';
       return;
     default:

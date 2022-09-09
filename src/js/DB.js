@@ -47,6 +47,20 @@ class DataBase {
     });
   }
 
+  changeTicket(data) {
+    fs.readFile(this.DBUrl, 'utf-8', () => {
+      const dataObject = this.parse();
+      const changingTicketEl = dataObject.tickets.find((el) => el.id === Number(data.id));
+      const changeTicketFullEl = dataObject.ticketsFull.find((el) => el.id === Number(data.id));
+
+      changingTicketEl.name = data.name;
+      changeTicketFullEl.name = data.name;
+      changeTicketFullEl.description = data.description;
+
+      fs.writeFile(this.DBUrl, JSON.stringify(dataObject), 'utf-8', () => true);
+    });
+  }
+
   generateId() {
     const data = this.parse();
     const idList = [];
